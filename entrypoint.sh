@@ -4,7 +4,7 @@
 git config --global --add safe.directory /github/workspace
 
 # For Docker Image CI test job
-if [ "$REPO" = "ScottBrenner/generate-changelog-action" ]; then
+if [ "$REPO" = "rIeLaPse/generate-changelog-action" ]; then
   git clone --quiet https://github.com/"$REPO"
   cd generate-changelog-action || exit
 fi
@@ -62,6 +62,8 @@ else
   echo "Allowing unknown commit types."
   unknown_commits="--allow-unknown "
 fi
+
+touch package.json
 
 # shellcheck disable=SC2086
 changelog=$(generate-changelog "$changelog_type" -t "$previous_tag..$new_tag" ${exclude_types} "$unknown_commits" --file -)
