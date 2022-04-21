@@ -43,6 +43,7 @@ This Action additionally supports the following inputs, in accordance with [lob/
 | `type`                    | Unset         | The type of changelog to generate: patch, minor, or major. If not set, fallbacks to unset.                                    |
 | `exclude`                 | Unset         | Exclude selected commit types (comma separated). If not set, fallbacks to unset.                                              |
 | `allow-unknown`           | Unset         | Allow unknown commit types. If not set, fallbacks to unset.
+| `create-package-json`           | Unset         | If set - create an empty `package.json` on the fly |
 
 For more information, see [actions/create-release: Usage](https://github.com/actions/create-release#usage), [lob/generate-changelog: Usage](https://github.com/lob/generate-changelog#usage), and [jobs.<job_id>.steps[*].with](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepswith).
 
