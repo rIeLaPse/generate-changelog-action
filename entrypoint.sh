@@ -1,6 +1,8 @@
 #!/bin/sh -l
 # shellcheck disable=SC2039
 
+git config --global --add safe.directory /github/workspace
+
 # For Docker Image CI test job
 if [ "$REPO" = "ScottBrenner/generate-changelog-action" ]; then
   git clone --quiet https://github.com/"$REPO"
