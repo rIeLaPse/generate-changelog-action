@@ -63,7 +63,15 @@ else
   unknown_commits="--allow-unknown "
 fi
 
-touch package.json
+
+if [ -z "$CREATE_PACKAGE_JSON" ]; then
+  echo "Use existing package.json"
+else
+  echo "Create package.json on the fly"
+  touch package.json
+  echo "{}" > package.json
+fi
+
 
 # shellcheck disable=SC2086
 changelog=$(generate-changelog "$changelog_type" -t "$previous_tag..$new_tag" ${exclude_types} "$unknown_commits" --file -)
